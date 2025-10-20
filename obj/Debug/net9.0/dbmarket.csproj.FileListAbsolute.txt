@@ -30,3 +30,4 @@
 /Users/ivan/Desktop/dbmarket/obj/Debug/net9.0/dbmarket.pdb
 /Users/ivan/Desktop/dbmarket/obj/Debug/net9.0/dbmarket.genruntimeconfig.cache
 /Users/ivan/Desktop/dbmarket/obj/Debug/net9.0/ref/dbmarket.dll
+/Users/ivan/Desktop/dbmarket/obj/Debug/net9.0/dbmarket.sourcelink.json

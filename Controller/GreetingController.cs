@@ -8,9 +8,24 @@ namespace dbmarket.Controller
 {
     public class GreetingController
     {
-        public static void Run(string? yourname)
+        public static void Run(string? rawName)
         {
-            Console.WriteLine($"Hello, {yourname}!");
+            string login = rawName ?? string.Empty.Trim();
+            if (string.IsNullOrEmpty(login))
+            {
+                Console.WriteLine("You didn't provide a login.");
+                return;
+            }
+
+            var applicant = Services.ApplicationsService.FindByCardNumber(int.Parse(login));
+            if (applicant is null)
+            {
+                Console.WriteLine($"No applicant found with card number {login}.");
+                return;
+            }
+
+            Console.WriteLine($"You used login, {login}!\n Details: {applicant.Id} {applicant.Name} {applicant.LastName}, Age: {applicant.Age}, Adresse: {applicant.Adresse}, Description: {applicant.Description}");
         }
+
     }
 }
