@@ -1,4 +1,4 @@
-@dbmarket_HostAddress = http://localhost:5210
+@dbmarket_HostAddress = http://localhost:5166
 
 GET {{dbmarket_HostAddress}}/weatherforecast/
 Accept: application/json

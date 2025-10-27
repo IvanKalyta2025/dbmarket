@@ -1,7 +1,22 @@
-using System;
-using dbmarket.Controller;
+var builder = WebApplication.CreateBuilder(args);
 
-Console.Write("private number by candidate:");
-string? login = Console.ReadLine();
+// Add services to the container.
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi("v2");
+builder.Services.AddControllers();
 
-GreetingController.Run(login);
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
+
+app.UseHttpsRedirection();
+
+app.MapControllers();
+
+app.Run();
+
+
